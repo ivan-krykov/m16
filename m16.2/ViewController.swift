@@ -6,12 +6,22 @@
 //
 
 import UIKit
-
+ 
 class ViewController: UIViewController {
 
+    var label: UILabel = {
+        let label = UILabel()
+        label.text = "Hello world!"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .black
+        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        view.addSubview(label)
     }
 
 
